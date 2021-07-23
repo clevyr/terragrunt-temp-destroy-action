@@ -1,0 +1,9 @@
+name: "Terragrunt Temp Environment Destroy"
+description: "Destroys a temporary environment created via Terragrunt/Terraform"
+author: "Mitchell"
+runs:
+  using: "node12"
+  main: "main.js"
+branding:
+  icon: upload-cloud
+  color: green
