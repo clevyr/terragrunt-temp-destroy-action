@@ -66,7 +66,8 @@ _log Verify the target namespace exists
 appName=$(< deployment/application_name)
 if ! kubectl get namespace $appName-pr$prNum ; then
     _log Target namespace does not exist, exiting.
-    exit 0
+    echo "::set-output name=skipped::true"
+    exit 1
 fi
 
 _log Starting Terragrunt and yq install...
