@@ -46,7 +46,7 @@ environment="pr"$prNum
 _log Verify tempbuilds folder exists
 if [ ! -d deployment/tempbuilds ]; then
     _log tempbuilds folder not found! Aborting.
-    exit 1
+    exit 0
 fi
 
 _log Activate gcloud auth
@@ -67,7 +67,7 @@ appName=$(< deployment/application_name)
 if ! kubectl get namespace $appName-pr$prNum ; then
     _log Target namespace does not exist, exiting.
     echo "::set-output name=skipped::true"
-    exit 1
+    exit 0
 fi
 
 _log Starting Terragrunt and yq install...
