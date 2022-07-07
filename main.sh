@@ -91,7 +91,7 @@ terragrunt init
 cd ../$environment
 terragrunt init
 _log Running Terragrunt destroy
-terragrunt destroy -auto-approve
+terragrunt destroy -var=static_site_image_tag="null" -auto-approve
 _log Destruction complete
 if [[ -n "${GITHUB_TOKEN:-}" ]]; then
     # Set the deployment status
