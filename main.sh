@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Set up some variables so we can reference the GitHub Action context
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
