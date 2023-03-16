@@ -72,7 +72,7 @@ _log Verify the target namespace exists
 appName=$(< deployment/application_name)
 if ! kubectl get namespace $appName-pr$prNum ; then
     _log Target namespace does not exist, exiting.
-    echo "::set-output name=skipped::true"
+    echo "skipped=true" >> $GITHUB_OUTPUT
     exit 0
 fi
 
